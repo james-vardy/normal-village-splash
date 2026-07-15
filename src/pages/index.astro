@@ -8,7 +8,7 @@ const schema = {
 	'@context': 'https://schema.org',
 	'@type': 'MusicGroup',
 	name: 'Normal Village',
-	genre: 'Punk',
+	genre: 'Rock',
 	foundingLocation: { '@type': 'Place', name: 'Leeds, England' },
 	url: canonical,
 	image: new URL('/normal-village-press.jpg', site).href,
@@ -35,20 +35,20 @@ const schema = {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="theme-color" content="#000000" />
-		<title>Normal Village - Leeds Punk Four-Piece | Live at Beaverworks</title>
+		<title>Normal Village - Leeds Rock Four-Piece | Live at Beaverworks</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonical} />
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="Normal Village" />
 		<meta property="og:url" content={canonical} />
-		<meta property="og:title" content="Normal Village - Leeds Punk Four-Piece" />
+		<meta property="og:title" content="Normal Village - Leeds Rock Four-Piece" />
 		<meta property="og:description" content="'Live at Beaverworks' out now on Private Regcords - listen, watch and find upcoming shows." />
 		<meta property="og:image" content={ogImage} />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="1200" />
 		<meta property="og:image:alt" content="Normal Village - Live at Beaverworks cover art" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Normal Village - Leeds Punk Four-Piece" />
+		<meta name="twitter:title" content="Normal Village - Leeds Rock Four-Piece" />
 		<meta name="twitter:description" content="'Live at Beaverworks' out now on Private Regcords - listen, watch and find upcoming shows." />
 		<meta name="twitter:image" content={ogImage} />
 		<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
