@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx wrangler *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -m 8 https://privateregcords.co.uk)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" -m 8 https://kiosk.privateregcords.co.uk)"
+    ]
+  }
+}

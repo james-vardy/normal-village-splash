@@ -1,0 +1,702 @@
+---
+const site = Astro.site ?? new URL('https://normalvillage.privateregcords.co.uk');
+const canonical = new URL('/', site).href;
+const ogImage = new URL('/og-image.jpg', site).href;
+const description = "Normal Village - Leeds Four-Piece. 'Live at Beaverworks' out now via Private Regcords. Listen, watch and find upcoming shows.";
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'MusicGroup',
+	name: 'Normal Village',
+	genre: 'Punk',
+	foundingLocation: { '@type': 'Place', name: 'Leeds, England' },
+	url: canonical,
+	image: new URL('/normal-village-press.jpg', site).href,
+	sameAs: [
+		'https://www.instagram.com/normalvillage/',
+		'https://normalvillage.bandcamp.com/',
+		'https://open.spotify.com/artist/3oeKZkNMobMXjfDXmS6EJO',
+	],
+	album: {
+		'@type': 'MusicAlbum',
+		name: 'Live at Beaverworks',
+		byArtist: { '@type': 'MusicGroup', name: 'Normal Village' },
+		url: 'https://normalvillage.bandcamp.com/album/live-at-beaverworks',
+	},
+};
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.ico" sizes="32x32" />
+		<link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192" />
+		<link rel="apple-touch-icon" href="/favicon-192.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#000000" />
+		<title>Normal Village - Leeds Punk Four-Piece | Live at Beaverworks</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Normal Village" />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:title" content="Normal Village - Leeds Punk Four-Piece" />
+		<meta property="og:description" content="'Live at Beaverworks' out now on Private Regcords - listen, watch and find upcoming shows." />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="1200" />
+		<meta property="og:image:alt" content="Normal Village - Live at Beaverworks cover art" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Normal Village - Leeds Punk Four-Piece" />
+		<meta name="twitter:description" content="'Live at Beaverworks' out now on Private Regcords - listen, watch and find upcoming shows." />
+		<meta name="twitter:image" content={ogImage} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+	</head>
+	<body>
+
+		<!-- HERO -->
+		<section class="hero">
+			<img
+				src="/normal-village-press.jpg"
+				srcset="/normal-village-press-700.jpg 700w, /normal-village-press.jpg 1200w"
+				sizes="(min-width: 960px) 45vw, 100vw"
+				alt="Normal Village" class="hero-img" width="1200" height="1200" fetchpriority="high" />
+		</section>
+
+		<main class="container">
+
+			<!-- NAME -->
+			<header class="intro">
+				<h1 class="logo">Normal <em>Village</em></h1>
+				<p class="tagline">Four-piece from Leeds.<br>
+					&lsquo;Live at Beaverworks&rsquo; out now via Private Regcords.</p>
+				<div class="social-icons">
+					<a href="https://www.instagram.com/normalvillage/" class="social" target="_blank" rel="noopener" aria-label="Normal Village on Instagram">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg>
+					</a>
+					<a href="https://normalvillage.bandcamp.com/" class="social" target="_blank" rel="noopener" aria-label="Normal Village on Bandcamp">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M0 18.75l7.437-13.5H24l-7.438 13.5H0z"/></svg>
+					</a>
+					<a href="https://open.spotify.com/artist/3oeKZkNMobMXjfDXmS6EJO" class="social" target="_blank" rel="noopener" aria-label="Normal Village on Spotify">
+						<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.56.3z"/></svg>
+					</a>
+				</div>
+			</header>
+
+			<!-- LISTEN -->
+			<section class="listen">
+				<h2 class="section-heading">Listen</h2>
+				<div class="bandcamp-embed">
+					<img
+						class="bandcamp-cover"
+						src="/live-at-beaverworks-cover-700.jpg"
+						alt="Live at Beaverworks album art"
+						loading="lazy"
+					/>
+					<iframe
+						title="Normal Village - Live at Beaverworks on Bandcamp"
+						style="border: 0; width: 100%; height: 120px;"
+						src="https://bandcamp.com/EmbeddedPlayer/album=2920672713/size=large/bgcol=000000/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+						loading="lazy"></iframe>
+				</div>
+				<div class="platform-links">
+					<a href="https://normalvillage.bandcamp.com/album/live-at-beaverworks" class="link-button" target="_blank" rel="noopener">
+						<span class="link-label">
+							<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M0 18.75l7.437-13.5H24l-7.438 13.5H0z"/></svg>
+							Bandcamp
+						</span>
+						<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
+					</a>
+					<a href="https://youtu.be/FsGM-k0Km4k" class="link-button" target="_blank" rel="noopener">
+						<span class="link-label">
+							<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+							Watch on YouTube
+						</span>
+						<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
+					</a>
+					<a href="https://open.spotify.com/artist/3oeKZkNMobMXjfDXmS6EJO" class="link-button" target="_blank" rel="noopener">
+						<span class="link-label">
+							<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.56.3z"/></svg>
+							Spotify
+						</span>
+						<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
+					</a>
+				</div>
+			</section>
+
+			<!-- MAILING LIST -->
+			<section class="signup">
+				<h2 class="section-heading">Join <em>the Mailing List</em></h2>
+				<p class="signup-blurb">Be the first to know about new releases, shows and the rest.</p>
+				<form class="signup-form" novalidate>
+					<label class="sr-only" for="signup-name">Your name</label>
+					<input id="signup-name" type="text" name="name" placeholder="Your name" autocomplete="name" />
+					<label class="sr-only" for="signup-email">Email address</label>
+					<input id="signup-email" type="email" name="email" placeholder="Email address" autocomplete="email" required />
+					<button type="submit" class="signup-btn">Join the Mailing List</button>
+					<p class="signup-status" role="status" aria-live="polite"></p>
+				</form>
+			</section>
+
+			<script>
+				const form = document.querySelector<HTMLFormElement>('.signup-form');
+				const status = document.querySelector<HTMLParagraphElement>('.signup-status');
+				const emailInput = document.querySelector<HTMLInputElement>('#signup-email');
+				form?.addEventListener('submit', async (event) => {
+					event.preventDefault();
+					const data = Object.fromEntries(new FormData(form));
+					const email = String(data.email ?? '').trim();
+					if (!status) return;
+					if (!email.includes('@')) {
+						emailInput?.setAttribute('aria-invalid', 'true');
+						status.textContent = 'Please enter a valid email address.';
+						emailInput?.focus();
+						return;
+					}
+					emailInput?.removeAttribute('aria-invalid');
+					status.textContent = 'Signing up...';
+					try {
+						const res = await fetch('/api/subscribe', {
+							method: 'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify(data),
+						});
+						const result = await res.json();
+						if (result.success) form.reset();
+						status.textContent = result.message ?? 'Something went wrong - please try again.';
+					} catch {
+						status.textContent = 'Something went wrong - please try again.';
+					}
+				});
+			</script>
+
+			<!-- UPCOMING SHOWS (Bandsintown) -->
+			<section class="shows">
+				<h2 class="section-heading">Upcoming <em>Shows</em></h2>
+				<script is:inline charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>
+				<a
+					class="bit-widget-initializer"
+					data-artist-name="id_15591465"
+					data-background-color="rgba(0,0,0,0)"
+					data-separator-color="rgba(255,255,255,0.1)"
+					data-text-color="#e5e5e5"
+					data-link-color="#ffffff"
+					data-font="Inter"
+					data-auto-style="false"
+					data-display-local-dates="false"
+					data-display-past-dates="false"
+					data-display-details="false"
+					data-display-lineup="true"
+					data-display-start-time="false"
+					data-social-share-icon="false"
+					data-display-limit="all"
+					data-date-format="ddd, MMM D, YYYY"
+					data-date-orientation="horizontal"
+					data-date-border-color="rgba(255,255,255,0)"
+					data-date-border-width="0px"
+					data-date-border-radius="0px"
+					data-event-ticket-cta-size="medium"
+					data-event-ticket-text="TICKETS"
+					data-event-ticket-icon="false"
+					data-event-ticket-cta-text-color="#000000"
+					data-event-ticket-cta-bg-color="#ffffff"
+					data-event-ticket-cta-border-color="#ffffff"
+					data-event-ticket-cta-border-width="0px"
+					data-event-ticket-cta-border-radius="6px"
+					data-sold-out-button-text-color="#ffffff"
+					data-sold-out-button-background-color="#4a4a4a"
+					data-sold-out-button-border-color="#4a4a4a"
+					data-event-rsvp-position="left"
+					data-event-rsvp-cta-size="medium"
+					data-event-rsvp-text="RSVP"
+					data-event-rsvp-icon="false"
+					data-event-rsvp-cta-text-color="#e5e5e5"
+					data-event-rsvp-cta-bg-color="rgba(0,0,0,0)"
+					data-event-rsvp-cta-border-color="rgba(255,255,255,0.35)"
+					data-event-rsvp-cta-border-width="1px"
+					data-event-rsvp-cta-border-radius="6px"
+					data-follow-section-position="top"
+					data-follow-section-alignment="center"
+					data-follow-section-header-text="Get updates on new shows, new music, and more"
+					data-follow-section-cta-size="medium"
+					data-follow-section-cta-text="FOLLOW"
+					data-follow-section-cta-icon="true"
+					data-follow-section-cta-text-color="#000000"
+					data-follow-section-cta-bg-color="#ffffff"
+					data-follow-section-cta-border-color="#ffffff"
+					data-follow-section-cta-border-width="0px"
+					data-follow-section-cta-border-radius="6px"
+					data-play-my-city-position="hidden"
+					data-language="en"
+					data-layout-breakpoint="600"
+					data-bit-logo-position="bottomRight"
+					data-bit-logo-color="#666666"
+				></a>
+			</section>
+
+		</main>
+
+		<!-- FOOTER -->
+		<footer>
+			<img src="/regcords-square-logo.png" alt="Private Regcords" class="footer-logo" width="192" height="192" loading="lazy" />
+			<p>Normal Village / Leeds</p>
+			<p class="label-credit"><a href="https://privateregcords.co.uk" target="_blank" rel="noopener">Private Regcords</a></p>
+		</footer>
+
+	</body>
+</html>
+
+<style>
+	/* ========= RESET & BASE ========= */
+	*, *::before, *::after {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			scroll-behavior: smooth;
+		}
+	}
+
+	body {
+		background: #000;
+		color: #e5e5e5;
+		font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-weight: 400;
+		line-height: 1.6;
+		-webkit-font-smoothing: antialiased;
+		overflow-x: hidden;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	a:focus-visible,
+	button:focus-visible {
+		outline: 2px solid #fff;
+		outline-offset: 3px;
+	}
+
+	/* visually hidden but available to screen readers */
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	/* ========= HERO ========= */
+	.hero {
+		position: relative;
+		max-width: 540px;
+		margin: 0 auto;
+	}
+
+	.hero-img {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		object-position: center 35%;
+	}
+
+	/* progressive blur at the bottom of the photo */
+	.hero::before {
+		content: "";
+		position: absolute;
+		inset: auto 0 0 0;
+		height: 55%;
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		mask-image: linear-gradient(to bottom, transparent, #000 75%);
+		-webkit-mask-image: linear-gradient(to bottom, transparent, #000 75%);
+		pointer-events: none;
+	}
+
+	/* fade into the page background */
+	.hero::after {
+		content: "";
+		position: absolute;
+		inset: auto 0 0 0;
+		height: 55%;
+		background: linear-gradient(to bottom, rgba(0,0,0,0), #000 90%);
+		pointer-events: none;
+	}
+
+	/* ========= LAYOUT ========= */
+	.container {
+		max-width: 540px;
+		margin: 0 auto;
+		padding: 0 1.5rem 4rem;
+	}
+
+	.section-heading {
+		font-size: 1.5rem;
+		font-weight: 700;
+		letter-spacing: -0.01em;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.listen,
+	.signup,
+	.shows {
+		padding-top: 4rem;
+	}
+
+	.listen {
+		padding-top: 1.5rem;
+	}
+
+	/* ========= INTRO ========= */
+	.intro {
+		position: relative;
+		margin-top: -3rem;
+		padding: 0 0 1rem;
+	}
+
+	.logo {
+		font-size: min(2.75rem, 11vw);
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		text-align: center;
+	}
+
+	/* bold + italic split, echoing the "Live at Beaverworks" cover art */
+	.logo em,
+	.section-heading em {
+		font-style: italic;
+		font-weight: 400;
+	}
+
+	.tagline {
+		font-size: 0.9rem;
+		color: rgba(229,229,229,0.75);
+		margin: 1rem auto 0;
+		max-width: 44ch;
+		text-align: center;
+	}
+
+	/* ========= LINK BUTTONS ========= */
+	.platform-links {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.link-button {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		border: 1px solid rgba(255,255,255,0.2);
+		padding: 0.85rem 1.1rem;
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		background: rgba(255,255,255,0.02);
+		transition: background 0.2s, border-color 0.2s, color 0.2s;
+	}
+
+	.link-button:hover {
+		background: #fff;
+		border-color: #fff;
+		color: #000;
+	}
+
+	.link-label {
+		display: flex;
+		align-items: center;
+		gap: 0.8em;
+		min-width: 0;
+	}
+
+	.icon {
+		width: 1.2em;
+		height: 1.2em;
+		flex-shrink: 0;
+	}
+
+	.ext {
+		position: absolute;
+		right: 1.1rem;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 1em;
+		height: 1em;
+		flex-shrink: 0;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 2;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		opacity: 0.5;
+	}
+
+	.link-button:hover .ext {
+		opacity: 1;
+	}
+
+	/* ========= BANDCAMP EMBED ========= */
+	.bandcamp-embed {
+		margin-bottom: 1.5rem;
+		border: 1px solid rgba(255,255,255,0.1);
+		overflow: hidden;
+		background: #000;
+	}
+
+	.bandcamp-cover {
+		display: none;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+	}
+
+	.bandcamp-embed iframe {
+		display: block;
+	}
+
+	@media (max-width: 448px) {
+		.bandcamp-cover {
+			display: block;
+		}
+	}
+
+	/* ========= MAILING LIST ========= */
+	.signup-blurb {
+		font-size: 0.9rem;
+		color: rgba(229,229,229,0.7);
+		margin: -0.75rem auto 1.25rem;
+		max-width: 44ch;
+		text-align: center;
+	}
+
+	.signup-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		max-width: 400px;
+		margin: 0 auto;
+	}
+
+	.signup-form input {
+		background: transparent;
+		border: none;
+		border-bottom: 1px solid rgba(255,255,255,0.3);
+		border-radius: 0;
+		color: #e5e5e5;
+		font-family: inherit;
+		font-size: 0.9rem;
+		padding: 0.75rem 0;
+	}
+
+	.signup-form input::placeholder {
+		color: rgba(229,229,229,0.6);
+	}
+
+	.signup-form input:focus {
+		outline: none;
+		border-bottom-color: #fff;
+	}
+
+	.signup-form input:focus-visible {
+		outline: 2px solid #fff;
+		outline-offset: 3px;
+	}
+
+	.signup-btn {
+		margin-top: 0.5rem;
+		background: #fff;
+		color: #000;
+		border: 1px solid #fff;
+		font-family: inherit;
+		font-size: 0.85rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		padding: 0.85rem 1rem;
+		cursor: pointer;
+		transition: background 0.2s, color 0.2s;
+	}
+
+	.signup-btn:hover {
+		background: transparent;
+		color: #fff;
+	}
+
+	.signup-status {
+		text-align: center;
+		font-size: 0.85rem;
+		color: rgba(229,229,229,0.7);
+		min-height: 1.2em;
+	}
+
+	/* ========= SOCIAL ICONS ========= */
+	.social-icons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		margin-top: 1.25rem;
+	}
+
+	.social {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 3rem;
+		height: 3rem;
+		border: 1px solid rgba(255,255,255,0.2);
+		color: #e5e5e5;
+		transition: background 0.2s, border-color 0.2s, color 0.2s;
+	}
+
+	.social svg {
+		width: 1.25rem;
+		height: 1.25rem;
+	}
+
+	.social:hover {
+		background: #fff;
+		border-color: #fff;
+		color: #000;
+	}
+
+	/* ========= FOOTER ========= */
+	footer {
+		text-align: center;
+		padding: 4rem 2rem 3rem;
+		border-top: 1px solid rgba(255,255,255,0.08);
+	}
+
+	.footer-logo {
+		width: 3rem;
+		height: 3rem;
+		object-fit: contain;
+		margin: 0 auto 1.5rem;
+		opacity: 0.4;
+		filter: invert(1);
+	}
+
+	footer p {
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		opacity: 0.55; /* 4.5:1 minimum contrast on #000 */
+	}
+
+	.label-credit {
+		margin-top: 0.5rem;
+	}
+
+	/* ========= DESKTOP: FULL-WIDTH SPLIT LAYOUT ========= */
+	@media (min-width: 960px) {
+		body {
+			display: grid;
+			grid-template-columns: auto minmax(0, 1fr);
+			grid-template-rows: 1fr auto;
+		}
+
+		/* press photo sits flush left at its natural aspect ratio (capped at
+		   45vw on short/wide windows), pinned while the right side scrolls */
+		.hero {
+			grid-column: 1;
+			grid-row: 1 / 3;
+			position: sticky;
+			top: 0;
+			align-self: start;
+			height: 100vh;
+			height: 100dvh;
+			width: min(67vh, 45vw);
+			width: min(calc(100dvh * (1200 / 1200)), 45vw);
+			max-width: none;
+		}
+
+		.hero-img {
+			width: 100%;
+			height: 100%;
+			aspect-ratio: auto;
+		}
+
+		/* swap the bottom fade for a right-edge fade into the content column */
+		.hero::before {
+			display: none;
+		}
+
+		.hero::after {
+			inset: 0 0 0 auto;
+			width: 25%;
+			height: 100%;
+			background: linear-gradient(to right, rgba(0,0,0,0), #000 95%);
+		}
+
+		/* content column centred in the space the photo leaves over */
+		.container {
+			grid-column: 2;
+			grid-row: 1;
+			justify-self: center;
+			width: 100%;
+			max-width: 640px;
+			padding: 4rem 3rem;
+		}
+
+		.intro {
+			margin-top: 0;
+		}
+
+		footer {
+			grid-column: 2;
+			grid-row: 2;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.platform-links {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	/* ========= RESPONSIVE ========= */
+	@media (max-width: 640px) {
+		.intro {
+			margin-top: -2.25rem;
+			padding: 0 0 0.75rem;
+		}
+
+		.logo {
+			font-size: min(2.1rem, 10vw);
+		}
+
+		.listen,
+		.signup,
+		.shows {
+			padding-top: 3rem;
+		}
+
+		.listen {
+			padding-top: 1rem;
+		}
+
+		.link-button {
+			font-size: 0.78rem;
+			padding: 0.8rem 0.9rem;
+		}
+	}
+</style>
